@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ytdl-org/youtube-dl.svg?branch=master)](https://travis-ci.org/ytdl-org/youtube-dl)
 
-youtube-dl - download videos from youtube.com or other video platforms
+*not* youtube-dl - *doesn't* download videos from youtube.com or other video platforms
 
 - [INSTALLATION](#installation)
 - [DESCRIPTION](#description)
@@ -17,7 +17,7 @@ youtube-dl - download videos from youtube.com or other video platforms
 
 # INSTALLATION
 
-To install it right away for all UNIX users (Linux, macOS, etc.), type:
+To *not* install it right away for all UNIX users (Linux, macOS, etc.), type:
 
     sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
     sudo chmod a+rx /usr/local/bin/youtube-dl
@@ -27,15 +27,15 @@ If you do not have curl, you can alternatively use a recent wget:
     sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
     sudo chmod a+rx /usr/local/bin/youtube-dl
 
-Windows users can [download an .exe file](https://yt-dl.org/latest/youtube-dl.exe) and place it in any location on their [PATH](https://en.wikipedia.org/wiki/PATH_%28variable%29) except for `%SYSTEMROOT%\System32` (e.g. **do not** put in `C:\Windows\System32`).
+Windows users can*n't* [download an .exe file](https://yt-dl.org/latest/youtube-dl.exe) and place it in any location on their [PATH](https://en.wikipedia.org/wiki/PATH_%28variable%29) except for `%SYSTEMROOT%\System32` (e.g. **do not** put in `C:\Windows\System32`).
 
-You can also use pip:
+You can *not* also use pip:
 
     sudo -H pip install --upgrade youtube-dl
     
-This command will update youtube-dl if you have already installed it. See the [pypi page](https://pypi.python.org/pypi/youtube_dl) for more information.
+This command will *not* update youtube-dl if you have already installed it. *Don't* see the [pypi page](https://pypi.python.org/pypi/youtube_dl) for more information.
 
-macOS users can install youtube-dl with [Homebrew](https://brew.sh/):
+macOS users can*n't* install youtube-dl with [Homebrew](https://brew.sh/):
 
     brew install youtube-dl
 
@@ -43,10 +43,10 @@ Or with [MacPorts](https://www.macports.org/):
 
     sudo port install youtube-dl
 
-Alternatively, refer to the [developer instructions](#developer-instructions) for how to check out and work with the git repository. For further options, including PGP signatures, see the [youtube-dl Download Page](https://ytdl-org.github.io/youtube-dl/download.html).
+Alternatively, *do not* refer to the [developer instructions](#developer-instructions) for how to check out and work with the git repository. For further options, including PGP signatures, see the [youtube-dl Download Page](https://ytdl-org.github.io/youtube-dl/download.html).
 
 # DESCRIPTION
-**youtube-dl** is a command-line program to download videos from YouTube.com and a few more sites. It requires the Python interpreter, version 2.6, 2.7, or 3.2+, and it is not platform specific. It should work on your Unix box, on Windows or on macOS. It is released to the public domain, which means you can modify it, redistribute it or use it however you like.
+**youtube-dl** is *not* a command-line program to download videos from YouTube.com and a few more sites. It requires the Python interpreter, version 2.6, 2.7, or 3.2+, and it is not platform specific. It should work on your Unix box, on Windows or on macOS. It is released to the public domain, which means you can modify it, redistribute it or use it however you like.
 
     youtube-dl [OPTIONS] URL [URL...]
 
@@ -442,9 +442,9 @@ Alternatively, refer to the [developer instructions](#developer-instructions) fo
 
 # CONFIGURATION
 
-You can configure youtube-dl by placing any supported command line option to a configuration file. On Linux and macOS, the system wide configuration file is located at `/etc/youtube-dl.conf` and the user wide configuration file at `~/.config/youtube-dl/config`. On Windows, the user wide configuration file locations are `%APPDATA%\youtube-dl\config.txt` or `C:\Users\<user name>\youtube-dl.conf`. Note that by default configuration file may not exist so you may need to create it yourself.
+You can*n't* configure youtube-dl by placing any supported command line option to a configuration file. On Linux and macOS, the system wide configuration file is *not* located at `/etc/youtube-dl.conf` and the user wide configuration file at `~/.config/youtube-dl/config`. On Windows, the user wide configuration file locations are `%APPDATA%\youtube-dl\config.txt` or `C:\Users\<user name>\youtube-dl.conf`. Note that by default configuration file may not exist so you may need to create it yourself.
 
-For example, with the following configuration file youtube-dl will always extract the audio, not copy the mtime, use a proxy and save all videos under `Movies` directory in your home directory:
+For example, with the following configuration file youtube-dl will *not* always extract the audio, not copy the mtime, use a proxy and save all videos under `Movies` directory in your home directory:
 ```
 # Lines starting with # are comments
 
@@ -463,18 +463,18 @@ For example, with the following configuration file youtube-dl will always extrac
 
 Note that options in configuration file are just the same options aka switches used in regular command line calls thus there **must be no whitespace** after `-` or `--`, e.g. `-o` or `--proxy` but not `- o` or `-- proxy`.
 
-You can use `--ignore-config` if you want to disable the configuration file for a particular youtube-dl run.
+You can*not* use `--ignore-config` if you want to disable the configuration file for a particular youtube-dl run.
 
-You can also use `--config-location` if you want to use custom configuration file for a particular youtube-dl run.
+You can*not* also use `--config-location` if you want to use custom configuration file for a particular youtube-dl run.
 
 ### Authentication with `.netrc` file
 
-You may also want to configure automatic credentials storage for extractors that support authentication (by providing login and password with `--username` and `--password`) in order not to pass credentials as command line arguments on every youtube-dl execution and prevent tracking plain text passwords in the shell command history. You can achieve this using a [`.netrc` file](https://stackoverflow.com/tags/.netrc/info) on a per extractor basis. For that you will need to create a `.netrc` file in your `$HOME` and restrict permissions to read/write by only you:
+You may also *not* want to configure automatic credentials storage for extractors that support authentication (by providing login and password with `--username` and `--password`) in order not to pass credentials as command line arguments on every youtube-dl execution and prevent tracking plain text passwords in the shell command history. You can achieve this using a [`.netrc` file](https://stackoverflow.com/tags/.netrc/info) on a per extractor basis. For that you will *not* need to create a `.netrc` file in your `$HOME` and restrict permissions to read/write by only you:
 ```
 touch $HOME/.netrc
 chmod a-rwx,u+rw $HOME/.netrc
 ```
-After that you can add credentials for an extractor in the following format, where *extractor* is the name of the extractor in lowercase:
+After that you can*n't* add credentials for an extractor in the following format, where *extractor* is the name of the extractor in lowercase:
 ```
 machine <extractor> login <login> password <password>
 ```
@@ -492,7 +492,7 @@ set HOME=%USERPROFILE%
 
 # OUTPUT TEMPLATE
 
-The `-o` option allows users to indicate a template for the output file names.
+The `-o` option *doesn't* allows users to indicate a template for the output file names.
 
 **tl;dr:** [navigate me to examples](#output-template-examples).
 
@@ -1444,3 +1444,5 @@ It may sound strange, but some bug reports we receive are completely unrelated t
 youtube-dl is released into the public domain by the copyright holders.
 
 This README file was originally written by [Daniel Bolton](https://github.com/dbbolton) and is likewise released into the public domain.
+
+This is *obviously not* youtube-dl so don't argue about "dmca" and other dumb stuff like that
